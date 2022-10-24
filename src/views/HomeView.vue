@@ -59,7 +59,11 @@ export default {
   },
   data () {
     return {
-      config: {},
+      config: {
+        path: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+        headless: false,
+        devtools: true
+      },
       jobs: [
         { kind: 'page_open', url: 'https://www.bing.com/' },
         { kind: 'page_refresh' },
@@ -71,8 +75,8 @@ export default {
   },
   methods: {
     execute () {
-      let instance = new Core(this.jobs)
-      instance.run(this.config)
+      let instance = new Core(this.config, this.jobs)
+      instance.run()
     }
   }
 }

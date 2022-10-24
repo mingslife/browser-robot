@@ -1,10 +1,9 @@
 export default class Core {
-  constructor (jobs) {
+  constructor (config, jobs) {
+    this.config = config
     this.jobs = jobs
-    this.code = ''
   }
 
-  run (config) {
-    console.log(config)
+  run () {
   }
 }
